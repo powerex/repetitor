@@ -1,0 +1,29 @@
+<html>
+<body>
+
+<div>
+
+    <div>
+        <form action="/logout" method="post">
+            <input type="hidden" name="_csrf" value="{{_csrf.token}}">
+            <input type="submit" value="Sign Out"/>
+        </form>
+    </div>
+
+    <b>add user</b>
+    <form method="post">
+        <input type="text" name="name" placeholder="Name">
+        <input type="number" name="age" placeholder="Age">
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}">
+        <button type="submit">Send</button>
+    </form>
+</div>
+
+<div><b>Users list</b></div>
+{{#users}}
+<div>
+    {{name}} {{age}}
+</div>
+{{/users}}
+</body>
+</html>
